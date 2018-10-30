@@ -63,7 +63,6 @@ button{
 @media screen and (max-width: 800px){
     .menu-container{
         flex-direction: column;
-        padding-top:  10px;
-        padding-bottom: 10px;
+    
     }
 }
