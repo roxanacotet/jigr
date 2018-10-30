@@ -1,0 +1,190 @@
+.user{
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    
+}
+.user a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    
+}
+
+.menubar{
+    overflow: hidden;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: flex-end;
+    align-content: flex-end;
+    padding-right:20px; 
+    margin-left: 320px;
+}
+
+.menubar a{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    margin-right: 80px;
+    margin-left:10px;
+}
+.dropdown{
+    float: left;
+    overflow: hidden;
+}
+.menubar a:hover,.dropdown:hover, .choosepuzzel, .dropdown-content a:hover, .choosepuzzel:focus{
+    background-color: #fdb8b8;
+
+}
+.dropdown .choosepuzzel{
+
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.dropdown-content{
+
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    z-index: 1;
+}
+.dropdown-content a{
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  
+}
+
+.show{
+    display: block;
+}
+.active{
+    background-color: black;
+    color: white;
+}
+.menubar .icon{
+    display: none;
+}
+
+#carousel {
+    margin-top: 240px;
+    margin-left: 250px;
+    margin-right: -70px;
+  position: relative;
+  height: 400px;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+#carousel div {
+  position: absolute;
+  transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+  opacity: 1;
+}
+#carousel div img {
+  width: 400px;
+  transition: width 1s;
+}
+#carousel div.hideLeft {
+  left: 0%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+}
+#carousel div.hideLeft img {
+  width: 200px;
+}
+#carousel div.hideRight {
+  left: 100%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+}
+#carousel div.hideRight img {
+  width: 200px;
+}
+#carousel div.prev {
+  z-index: 5;
+  left: 30%;
+  transform: translateY(50px) translateX(-50%);
+}
+#carousel div.prev img {
+  width: 300px;
+}
+#carousel div.prevLeftSecond {
+  z-index: 4;
+  left: 15%;
+  transform: translateY(50%) translateX(-50%);
+  opacity: 0.7;
+}
+#carousel div.prevLeftSecond img {
+  width: 200px;
+}
+#carousel div.selected {
+  z-index: 10;
+  left: 50%;
+  transform: translateY(0px) translateX(-50%);
+}
+#carousel div.next {
+  z-index: 5;
+  left: 70%;
+  transform: translateY(50px) translateX(-50%);
+}
+#carousel div.next img {
+  width: 300px;
+}
+#carousel div.nextRightSecond {
+  z-index: 4;
+  left: 85%;
+  transform: translateY(50%) translateX(-50%);
+  opacity: 0.7;
+}
+#carousel div.nextRightSecond img {
+  width: 200px;
+}
+
+.buttons {
+  position: fixed;
+  left: 60%;
+  transform: translateX(-50%);
+  bottom: 10px;
+}
+
+
+@media screen and (max-width: 800px){
+    .menubar a:not(:first-child){
+        display: none;
+    }
+    .menubar a.icon{
+        float: right;
+        display: block;
+    }
+    .menubar .responsive{
+        position: relative;
+    }  
+    .menubar.responsive.icon{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .menubar.responsive a{
+        float:none;
+        display: block;
+        text-align: left;
+    }
+}
