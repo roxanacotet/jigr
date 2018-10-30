@@ -12,7 +12,9 @@
     text-decoration: none;
     
 }
-
+body{
+    padding-top: 0px;
+}
 .menubar{
     overflow: hidden;
     background-color: black;
@@ -81,6 +83,27 @@
 }
 .menubar .icon{
     display: none;
+}
+.capture{
+    margin-left: 400px;
+    float: left;
+}
+#time{
+    width: 70px;
+    height: 30px;
+    border:#fdb8b8;
+    border-style:solid; 
+    color: black;
+    position: relative;
+    float:right;
+    margin-right: 30px;
+ 
+}
+.time{
+    color: #fdb8b8;
+    margin-top: 20px;
+    float: left;
+    margin-left:10px; 
 }
 
 @media screen and (max-width: 800px){
