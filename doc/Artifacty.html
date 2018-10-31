@@ -1,0 +1,213 @@
+﻿
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="project, infoiasi, web, social, friends, photos, videos, media" /> 
+    <title>PuzzleIT</title>
+    <link rel="stylesheet" href="scholarly.css">
+    <link rel="stylesheet" href="prism-coy.css">
+    <script src="node_modules/prismjs/prism.js" defer></script>
+  </head>
+  <body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    <header>
+      <p class="title">PuzzleIT</p>
+      <p class="subtitle">PuzzleIT</p>
+    </header>
+    <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+      <h1>PuzzleIT</h1>
+      <section>
+        <ol>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="#" typeof="schema:Person">
+              <span property="schema:givenName">Roxana Andreea</span>
+              <span property="schema:familyName">Coteț</span>
+            </a>
+          </li>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="#" typeof="schema:Person">
+              <span property="schema:givenName">Madalina-Elena</span>
+              <span property="schema:familyName">Magdalena</span>
+            </a>
+          </li>
+        </ol>
+      </section>
+
+      <section typeof="sa:Abstract" id="abstract">
+        <h2>Abstract</h2>
+        <p>
+          În conținutul lucrarii se regasesc urmatoarele: Introducere, Tehnologii utilizate, Arhitectura aplicatiei, Etapele de dezvoltare, Concluzie, Bibliografie
+        </p>
+      </section>
+      <section typeof="sa:Introducere" id="intro">
+        <h2>Introducere</h2>
+        <p>
+          PuzzleIT este o aplicatie Web care permite utilizatorilor sa intre intr-un concurs de rezolvare a puzzle-urilor. 
+        </p>
+      </section>
+      <section typeof="sa:MaterialsAndMethods" id="tehnologii">
+        <h2>Tehnologii</h2>
+        <h3>HTML</h3>
+        <p>
+          HyperText Markup Language (HTML) este un limbaj de marcare utilizat pentru crearea paginilor web ce pot fi afișate într-un browser (sau navigator). Scopul HTML este mai degrabă prezentarea informațiilor – paragrafe, fonturi, tabele ș.a.m.d. – decât descrierea semanticii documentului.HTML este prescurtarea de la Hyper Text Mark-up Language si este codul care sta la baza paginilor web. Va fi folosit in cadrul scheletului principal al proiectului .
+        </p>
+        <h3>CSS</h3>
+        <p>
+          CSS (Cascading Style Sheets) este un standard pentru formatarea elementelor unui document HTML. Stilurile se pot atașa elementelor HTML prin intermediul unor fișiere externe sau în cadrul documentului. CSS se poate utiliza și pentru formatarea elementelor XHTML, XML și SVGL.
+          Intregul design al aplicatiei se va fi realizat si formatat prin intermediul CSS.
+        </p>
+        <h3>Javascript / Xmlhttprequest</h3>
+        <p>
+          JavaScript (JS) este un limbaj de programare orientat obiect bazat pe conceptul prototipurilor. Este folosit mai ales pentru introducerea unor funcționalități în paginile web, codul Javascript din aceste pagini fiind rulat de către browser.
+          Xmlhttprequest este un obiect Javascript care permite obținerea de date în format XML (dar și HTML sau text simplu) cu ajutorul unui request HTTP.
+          Acest obiect este utilizat în cadrul tehnologiilor Ajax .
+          Cele doua tehnologii vor fi folosite in cadrul aplicatiei pentru validare client-side, animatii si cereri de tip AJAX.
+        </p>
+
+        <h3>GitHub</h3>
+        <p>
+          Reprezinta un sistem de control al versiunilor codului sursa care va fi folosit pentru o mai buna administrare cat si pentru lucrul in echipa.
+        </p>
+        
+      </section>
+      <section typeof="sa:MaterialsAndMethods" id="arhitectura">
+        <h2>Arhitectura aplicatiei</h2>
+        <p>
+          Utilizand tehnologiile mentionate in sectiunea anterioara, aplicatia va fi structurata in mai multe module, dupa cum urmeaza:
+        </p>
+        <p><strong>1. Register / Login</strong></p>
+        <p>
+          Pentru a putea interacționa cu aplicația, fiecare utilizator trebuie sa se înregistreze. Formularul de înregistrare va conține date personale
+          precum username-ul adresa de email, precum și o parola care va fi folosita pentru autentificare. În momentul în care utilizatorul
+          trimite datele, acestea sunt verificate și, în cazul în care acestea sunt corecte, se introduc în baza de date, iar utilizatorul este redirecționat
+          către pagina de login. În cazul în care datele nu sunt valide, userul va primi feedback și i se va cere reintroducerea unor date valide.
+          În momentul în care utilizatorul este deja înregistrat și doreste autentificarea, va introduce username-ul și parola. Serverul preia datele, le verifică și trimite unul din două răspunsuri:
+          <ul>
+            <li>În cazul în care datele sunt corecte, userul va fi redirecționat către pagina principala</li>
+            <li>În cazul în care datele nu sunt valide, utilizatorul va primi un mesaj corespunzător și va trebui sa reintroduca datele</li>
+          </ul>
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="images/login.png" alt="Login page">
+            <figcaption> Pagina de login </figcaption>
+        </figure>
+
+        <p><strong>2. Pagina principală </strong></p>
+        <p>
+          După logare, utilizatorul este redirectat către pagina principală unde acesta isi poate alege nivelul de dificultate pentru rezolvarea puzzle-urilor(easy, medium, hard).
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="images/home.png" alt="home">
+            <figcaption> Pagina principală </figcaption>
+        </figure>
+
+        <p><strong>3. Profile</strong></p>
+        <p>
+            Pe pagina de profil a unui utilizator normal, utilizatorul va putea vedea puzzle-urile pe care le-a adaugat, va putea adauga/sterge imagini si de asemenea poate vedea cati utilizatori i-au rezolvat puzzle-ul.
+
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="images/user.png" alt="profile">
+            <figcaption> Pagina de profil </figcaption>
+        </figure>
+        <p>
+            Pe pagina de profil generala utilizatorul va putea vizualiza 7 puzzle-uri din diverse categorii, cu gradul de dificultate pe care si l-a ales. De asemenea va putea sa isi alea categoria din care doreste sa fie puzzle-urile sau sa isi aleaga sa rezolve un puzzle random. Tot din aceasta pagina, utilizatorul poate sa acceseze pagina de top in care sunt afisati primii 5 din clasament.
+
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="images/firstPage.png" alt="admin">
+            <figcaption> Pagina de profil </figcaption>
+        </figure>
+
+        
+        <p><strong>4. Pagina de joc </strong></p>
+        <p>
+            In pagina de joc utilizatorul va putea rezolva puzzle-ul pe care si l-a ales si va putea observa scorul pe care l-a obtinut si timpul in care a rezolvat puzzle-ul. 
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="images/game.png" alt="description">
+            <figcaption> Pagina de joc </figcaption>
+        </figure>
+
+      </section>
+      
+      <section typeof="sa:MaterialsAndMethods" id="utilizatori">
+        <h2> Tipuri de utilizatori </h2>
+        
+        <h3>1. Utilizator </h3>
+          <p>
+          <strong> View Puzzle </strong> Utilizatorul poate vizualiza puzzle-uri pentru a le rezolva.
+        </p>
+          <p>
+          <strong>View Top </strong> Utilizatorul poate vedea clasamentul.
+        </p>
+          <p>
+          <strong> Add Puzzle </strong> Utilizatorul poate adăuga puzzle-uri.
+        </p>
+          <p>
+          <strong> Delete Puzzle </strong> Utilizatorul poate sterge puzzle-uri puse de el.
+        </p>
+        <h3>2. Guest </h3>
+          <p>
+          <strong> Create account </strong>Acest tip de  utilizator poate sa isi creeze un cont.
+        </p>
+
+      </section>
+      
+	  
+      <section typeof="sa:DevelopmentStages" id="stages">
+        <h2>Etape de dezvoltare</h2>
+        <p>
+          Aplicatia noastra web va fi dezvoltata in urmatoarele etape:
+        </p>
+        <ol>
+        	<li>Construirea partii de front-end, pe baza designului prezentat mai sus;</li>
+        	<li>Construirea logicii bazei de date, cu optimizarile necesare pentru o functionare cat mai rapida;</li>
+        	<li>Implementarea pe partea de server</li>
+        	<li>Testarea aplicatiei.</li>
+        </ol>
+        <p>
+        	Bineinteles ca aceste etape se pot desfasura si concomitent, nu numai secvential.
+        </p>
+        </section>
+      </section>
+      <section typeof="sa:Conclusion" id="conclusion">
+        <h2>Concluzie</h2>
+        <p>
+          	În concluzie, aplicația este folosită pentru a ajuta utilizatorii sa isi petreaca timpul liber intr-un mod cat mai relaxant.
+        </p>
+      </section>
+      <section typeof="sa:ReferenceList" id="references">
+        <h2>Bibliografie</h2>
+        <dl>
+            <dd typeof="schema:ScholarlyArticle" resource="https://www.w3schools.com/">
+                <a href="https://www.w3schools.com/">
+                    https://www.w3schools.com/
+                </a>
+            </dd>
+            <dd typeof="schema:ScholarlyArticle" resource="https://pxhere.com/">
+                <a href="https://pxhere.com/">
+                    https://www.w3schools.com/
+                </a>
+            </dd>
+            <dd typeof="schema:ScholarlyArticle" resource="https://www.tutorialrepublic.com/">
+                <a href="https://www.tutorialrepublic.com/">
+                    https://www.tutorialrepublic.com/
+                </a>
+            </dd>
+            <dd typeof="schema:ScholarlyArticle" resource="https://stackoverflow.com/">
+                <a href="https://stackoverflow.com/">
+                    https://stackoverflow.com/
+                </a>
+            </dd>
+            <dd typeof="schema:ScholarlyArticle" resource="http://paletton.com/">
+                <a href="http://paletton.com/">
+                    http://paletton.com/
+                </a>
+            </dd>
+        </dl>
+      </section>
+    </article>
+  </body>
+</html>

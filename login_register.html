@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <head>
+  <title>Login_Register Page</title>
+  <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="login_register.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
@@ -11,7 +13,7 @@
 
     <div class="form">
       
-      <div class="head" class="signup">
+      <div class="head signup">
         <div onclick="swap(this);" data-tab="login" class="login-tab">
           LOGIN
         </div>
@@ -25,11 +27,11 @@
         <div class="login">
           <div class="form-row">
             <i class="fas fa-envelope"></i>
-            <input type="email" name="" placeholder="Email" required="true">
+            <input type="email" name="Email" placeholder="Email" required>
             <i class="fas fa-unlock-alt"></i>
-            <input type="password" name="" placeholder="Password" required="true">
+            <input type="password" name="Password" placeholder="Password" required>
             <form action="home.html" method="get">
-              <input type="submit" value="LOGIN" name="LOGIN" id="button" />
+              <input type="submit" value="LOGIN" name="LOGIN" id="buttonLogin" />
             </form>
           </div>
 
@@ -39,10 +41,14 @@
 
           <div class="footer">
             <div class="social facebook">
+              <a href="https://www.facebook.com/?stype=lo&jlou=AffpRgj1iKMhQOKcBQctSiTMwa8nLgWJLM5tL6OZyeczF1c3XqzFeSpHS7yuCDao4oNSF3NkRv6cy0AAYYafIcTHHDukHJrE-3hz7RVToBty4w&smuh=46288&lh=Ac-tzq969q6gvbMg" target="_blanck">
               <i class="fab fa-facebook-square"></i>
+              </a>
             </div>
             <div class="social google">
-              <i class="fab fa-google-plus-square"></i>
+              <a href="https://accounts.google.com/signout/chrome/landing?continue=https://mail.google.com/mail&oc=https://mail.google.com/mail&hl=ro" target="_blancl">
+              <i class="fab fa-google-plus-g"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -50,15 +56,15 @@
         <div class="signup">
           <div class="form-row">
             <i class="fas fa-user"></i>
-            <input type="text" name="" placeholder="Username" required="true">
+            <input type="text" name="Username" placeholder="Username" required>
             <i class="fas fa-envelope"></i>
-            <input type="text" name="" placeholder="Email" required="true">
+            <input type="text" name="Email" placeholder="Email" required>
             <i class="fas fa-unlock-alt"></i>
-            <input type="password" name="" placeholder="Password" required="true">
+            <input type="password" name="Password" placeholder="Password" required>
             <i class="fas fa-unlock-alt"></i>
-            <input type="password" name="" placeholder="Re-Type Password" required="true">
+            <input type="password" name="Password" placeholder="Re-Type Password" required>
             <form action="home.html" method="get">
-              <input type="submit" value="SIGNUP" name="SIGNUP" id="button"/>
+              <input type="submit" value="SIGNUP" name="SIGNUP" id="buttonSignup"/>
             </form>
           </div>
         </div>
