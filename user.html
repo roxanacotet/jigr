@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="gamePage.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="user.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+</head>
+<body>
+        <nav class="user">
+           <a href="login_register.html"> <img src="logout.jpg" alt="logout">| </a>
+            <a href="#userpage">username</a>
+        </nav>
+        <div class="logo">
+                <img src="logo1.png" alt="logo">
+        </div> 
+            <div class="menubar" id="myMenubar">
+                <a  href="home.html">Home</a>
+                <a href="#Make your own">Add a puzzle</a>
+                <div class="dropdown">
+                   <button class="choosepuzzel" onclick="chooseFunction()">Category
+                    <i class ="fa fa-caret-down"></i>
+                    </button>
+                        <div class="dropdown-content" id="myMenu">        
+                         <a href="#">Animals</a>
+                        <a href="#">Plants</a>
+                        <a href="#">Cars</a>
+                        <a href="#">Nature</a>
+                        <a href="#">People</a>
+                        </div>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myResponsivemenu()">&#9776;
+                </a>
+
+            </div>
+
+        <div class="row">
+            <div class="column">
+                <a href="gamePage.html">
+                    <i class="far fa-trash-alt"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <img src="Carrots.png">
+                </a>
+            </div>
+            <div class="column">
+                <i class="far fa-trash-alt"></i>
+                <i class="fas fa-check-circle"></i>
+                <img src="1.jpg">
+            </div>
+            <div class="column">
+                <i class="far fa-trash-alt"></i>
+                <i class="fas fa-check-circle"></i>
+                <img src="4.jpg">
+            </div>
+            <div class="column">
+                <i class="far fa-trash-alt"></i>
+                <i class="fas fa-check-circle"></i>
+                <img src="3.jpg">
+            </div>
+            <div class="column">
+                <i class="far fa-trash-alt"></i>
+                <i class="fas fa-check-circle"></i>
+                <img src="8.jpg">
+            </div>
+            <div class="column">
+                <i class="far fa-trash-alt"></i>
+                <i class="fas fa-check-circle"></i>
+                <img src="6.jpg">
+            </div>
+            <div class="column">
+                <i class="far fa-trash-alt"></i>
+                <i class="fas fa-check-circle"></i>
+                <img src="7.jpg">
+            </div>
+            <div class="column">
+                <i class="far fa-trash-alt"></i>
+                <i class="fas fa-check-circle"></i>
+                <img src="8.jpg">
+            </div>
+            <div class="column">
+                <img src="9.jpg">
+            </div>
+            <div class="column">
+                <img src="10.jpg">
+            </div>
+            <div class="column">
+                <img src="11.jpg">
+            </div>
+
+        </div>    
+
+    <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function chooseFunction() {
+    document.getElementById("myMenu").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.choosepuzzel')) {
+    var myDropdown = document.getElementById("myMenu");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+function myResponsivemenu(){
+    var x=document.getElementById("myMenubar");
+    if(x.className === "menubar"){
+        x.className += "responsive";
+    }
+    else{
+        x.className="menubar";
+    }
+}
+</script>        
+</body>
+</html>
