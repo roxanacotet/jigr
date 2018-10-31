@@ -14,6 +14,7 @@
 }
 body{
     padding-top: 0px;
+    overflow: hidden;
 }
 .menubar{
     overflow: hidden;

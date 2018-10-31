@@ -2,10 +2,83 @@
 <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="login_register.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 </head>
 <body>
     <div class="logo">
-            <a href="home.html"><img src="logo1.png" alt="logo"></a>
+           <img src="logo1.png" alt="logo">
+    </div>
+
+    <div class="form">
+      
+      <div class="head" class="signup">
+        <div onclick="swap(this);" data-tab="login" class="login-tab">
+          LOGIN
+        </div>
+        <div onclick="swap(this);" data-tab="signup" class="signup-tab">
+          SIGNUP
+        </div>
+      </div>
+
+      <div class="body" id="form-body">
+
+        <div class="login">
+          <div class="form-row">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="" placeholder="Email" required="true">
+            <i class="fas fa-unlock-alt"></i>
+            <input type="password" name="" placeholder="Password" required="true">
+            <form action="home.html" method="get">
+              <input type="submit" value="LOGIN" name="LOGIN" id="button" />
+            </form>
+          </div>
+
+          <div class="span">
+            <span>OR</span>
+          </div>
+
+          <div class="footer">
+            <div class="social facebook">
+              <i class="fab fa-facebook-square"></i>
+            </div>
+            <div class="social google">
+              <i class="fab fa-google-plus-square"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="signup">
+          <div class="form-row">
+            <i class="fas fa-user"></i>
+            <input type="text" name="" placeholder="Username" required="true">
+            <i class="fas fa-envelope"></i>
+            <input type="text" name="" placeholder="Email" required="true">
+            <i class="fas fa-unlock-alt"></i>
+            <input type="password" name="" placeholder="Password" required="true">
+            <i class="fas fa-unlock-alt"></i>
+            <input type="password" name="" placeholder="Re-Type Password" required="true">
+            <form action="home.html" method="get">
+              <input type="submit" value="SIGNUP" name="SIGNUP" id="button"/>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+
     </div>    
-        
+    
+    <script type="text/javascript">
+      function swap(referTo) {
+        if(referTo.getAttribute("data-tab") == "login"){
+          document.getElementById('form-body').classList.remove('active');
+          referTo.parentNode.classList.remove('signup');
+        }
+        else{
+          document.getElementById('form-body').classList.add('active');
+          referTo.parentNode.classList.add('signup');
+        }
+      }
+    </script>
+
 </body>
