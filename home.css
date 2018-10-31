@@ -2,7 +2,7 @@ body{
    background-image: url("bg1.jpg");
    background-repeat: no-repeat;
     padding: 50px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     
 
 }
