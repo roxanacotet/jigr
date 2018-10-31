@@ -108,6 +108,24 @@ body{
     margin-left:10px; 
 }
 
+#score{
+    width: 70px;
+    height: 30px;
+    border:#fdb8b8;
+    border-style:solid; 
+    color: black;
+    position: relative;
+    float:right;
+    margin-right: 30px;
+ 
+}
+.score{
+    color: #fdb8b8;
+    margin-top: 20px;
+    float: left;
+    margin-left:10px; 
+}
+
 @media screen and (max-width: 800px){
     .menubar a:not(:first-child){
         display: none;
