@@ -154,6 +154,156 @@
         </p>
 
       </section>
+
+
+      </section>
+      <section typeof="sa:MaterialsAndMethods" id="arhitectura">
+        <h2>Scenarii de utilizare</h2>
+        <p><strong>1. Un utilizator al aplicatiei se logheaza in sistem.</strong></p>
+        <p>
+          Acest scenariu de utilizare incepe cand un utilizator al aplicatiei, care nu este inca logat in sistem, acceseaza pagina de Log In.
+          <ul>
+            <li>Aplicatia cere utilizatorului sa introduca datele aferente contului sau (Email, resprectiv parola) sau sa se inregistreze cu un cont nou.</li>
+            <li>Utilizatorul introduce email-ul si parola.</li>
+            <li>Aplicatia valideaza datele introduse de catre utilizator, verifica daca exista un cont cu email-ul specificat caruia ii corespunde parola introdusa.</li>
+            <li>Utilizatorul este autentificat cu succes, fiind redirectionat la pagina de profil.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+        <p>
+          Extensii. Userul nu reuseste sa se autentifice
+          <ul>
+            <li>Utilizatorul primeste un mesaj de eroare, in care sunt specificate motivele pentru care autentificarea nu a reusit.</li>
+            <li>Aplicatia cere utilizatorului sa reintroduca datele aferente.</li>
+            <li>Se reincepe procesul de autentificare.</li>
+          </ul>
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="login.png" alt="Login page">
+        </figure>
+
+        <p><strong>2. Un utilizator neinregistrat creeaza un cont nou.</strong></p>
+        <p>
+          Acest scenariu porneste in momentul in care un vizitator se hotaraste sa se inregistreze, accesand pagina de Register(Sign Up).
+          <ul>
+            <li>Userul acceseaza pagina de Register(Sign Up).</li>
+            <li>Aplicatia cere utilizatorului o serie de informatii necesare pentru crearea unui nou cont: Email, UserName, parola, etc.</li>
+            <li>Utilizatorul introfuce informatiile sale.</li>
+            <li>Aplicatia verifica date introduse si le salveaza in baza de date.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+        <p>
+          Extensii. Anularea inregistrarii.
+          <ul>
+            <li>Utilizatorul anuleaza inregistrarea.</li>
+            <li>Utilizatorul este redirectionat catre pagina principala, avand acelasi statut. Informatiile nu sunt salvate in baza de date.</li>
+          </ul>
+        </p>
+        <p>
+          Extensii. Informatii invalide..
+          <ul>
+            <li>Utilizatorul trimite datele catre aplicatie.</li>
+            <li>Aplicatia returneaza mesaje corespunzatoare, cerand utilizatorului sa corecteze eventualele greseli aparute la introducerea datelor.</li>
+            <li>Utilizatorul reintroduce datele.</li>
+          </ul>
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="register.png" alt="Login page">
+        </figure>
+
+        <p><strong>3. Un utilizator autentificat adauga un puzzle nou.</strong></p>
+        <p>
+          Scenariul incepe cand un utilizator autentificat acceseaza optiunea  ‘Add a puzzle’.
+          <ul>
+            <li>Aplicatia cere utilizatorului sa introduca datele corespunzatoare noului puzzle (Titlu, categorie, etc..).</li>
+            <li>Utilizatorul introduce datele necesare si le trimite catre aplicatie.</li>
+            <li>Aplicatia valideaza datele introduse si le adauga la baza de date.</li>
+            <li>Utilizatorul este redirectionat spre pagina noului puzzle.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+        <p>
+          Extensii. Informatiile nu sunt valide.
+          <ul>
+            <li>Aplicatia returneaza un mesaj dupa ce utilizatorul a introdus datele, si ii cere acestuia sa reintroduca informatiile aferente noului puzzle.</li>
+            <li>Utilizatorul reintroduce datele si le trimite catre aplicatie.</li>
+          </ul>
+        </p>
+        <p>
+          Extensii. Anulare request.
+          <ul>
+            <li>Utilizatorul anuleaza cererea de a adauga un nou puzzle.</li>
+            <li>Aplicatia il redirectioneaza spre pagina de profil.</li>
+          </ul>
+        </p>
+
+        <p><strong>4. Rezolvare puzzle.</strong></p>
+        <p>
+          Acest scenariu incepe in momentul in care un utilizator selecteaza un puzzle.
+          <ul>
+            <li>Aplicatia afiseaza butonul de ‘Start’ pentru un anumit puzzle.</li>
+            <li>Utilizatorul apasa butonul.</li>
+            <li>Utilizatorul incepe rezolvarea puzzle-ului, iar aplicatia incepe sa conometreze timpul in care puzzle-ul este rezolvat.</li>
+            <li>Aplicatia updateaza baza de date pentru puzzle-ul si user-ul respectiv.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+        <p>
+          Extensii. Utilizatorul a rezolvat deja puzzle-ul.
+          <ul>
+            <li>Aplicatia returneaza un mesaj dupa ce utilizatorul apasa butonul ‘Start’.</li>
+          </ul>
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="Rezolvare.png" alt="Login page">
+        </figure>
+
+        <p><strong>5. Un utilizator cauta un puzzle folosind bara de ‘Search’.</strong></p>
+        <p>
+          Scenariul incepe cand un utilizator acceseaza optiunea de ‘Search’.
+          <ul>
+            <li>Aplicatia afiseaza bara de Search.</li>
+            <li>Utilizatorul introduce criteriile de cautare.</li>
+            <li>Aplicatia afiseaza rezultatele cautarii.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+        <p>
+          Extensii. Anulare cautare.
+          <ul>
+            <li>Utilizatorul anuleaza cautare.</li>
+            <li>Aplicatia il redirectioneaza catre pagina principala.</li>
+          </ul>
+        </p>
+        <p>
+          Extensii. Datele nu exista.
+          <ul>
+            <li>Aplicatia returneaza un mesaj cum ca datele nu exista.</li>
+            <li>Aplicatia il redireactioneaza catre pagina principala.</li>
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="search.png" alt="Login page">
+        </figure>
+
+
+      </section>
+
+      <section>
+        <section typeof="sa:MaterialsAndMethods" id="arhitectura">
+        <h2>Diagrama bazei de date</h2>
+        <figure typeof = "sa:Image">
+            <img src="bd.png" alt="Login page">
+        </figure>
+      </section>
+
+      <section>
+        <section typeof="sa:MaterialsAndMethods" id="arhitectura">
+        <h2>Diagrama de clase</h2>
+        <figure typeof = "sa:Image">
+            <img src="classDiagram.png" alt="Login page">
+        </figure>
+      </section>
       
 	  
       <section typeof="sa:DevelopmentStages" id="stages">
@@ -171,6 +321,37 @@
         	Bineinteles ca aceste etape se pot desfasura si concomitent, nu numai secvential.
         </p>
         </section>
+
+        <section typeof="sa:DevelopmentStages" id="stages">
+        <h2>Tehnologii folosite</h2>
+        <p>
+          Avand in vedere expansiunea Internetului din zilele noastre, dar mai ales utilizarea pe scara larga a principalului serviciu oferit si anume HTTP, serviciu care ofera accesul la informatii prin intermediul browser-elor cunoscute, este necesar sa se poata construi un site eficient.
+        Pentru aceasta, vom folosi urmatoarele pachete si limbage de programare:
+
+        </p>
+        <ol>
+          <li>Pachetul XAMPP, care contine un server APACHE pentru gestiunea PHP si MySQL</li>
+          <li>Limbajul de descriere a datelor HTML5</li>
+          <li>Standarul pentru formatarea elementelor unui document HTML5, CSS</li>
+          <li>Limbajul de programare orientat obiect bazat pe conceptul prototipurilor JavaScript</li>
+          <li>Limbajul de programare PHP</li>
+          <li>Sistemul de gestiune a bazelor de date MySQL</li>
+        </ol>
+        </section>
+
+        <section typeof="sa:DevelopmentStages" id="stages">
+        <h2>Module</h2>
+        
+        <ol>
+          <li>Modulul de logare</li>
+          <li>Modulul de filtrare</li>
+          <li>Modulul de inserare puzzle-uri</li>
+          <li>Modulul de rezolvare de puzzle-uri</li>
+          <li>Modulul de servicii web, export date</li>
+          <li>Interactiunea cu baza de date</li>
+        </ol>
+        </section>
+
       </section>
       <section typeof="sa:Conclusion" id="conclusion">
         <h2>Concluzie</h2>
