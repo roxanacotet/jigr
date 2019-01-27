@@ -1,130 +1,34 @@
-.user{
-    display: flex;
-    align-content: flex-end;
-    justify-content: flex-end;
-    position: relative;
-    
-}
-.user a{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    color: black;
-    text-decoration: none;
-    
-}
+
 body{
     padding-top: 0px;
     overflow: hidden;
 }
-.menubar{
-    overflow: hidden;
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    justify-content: flex-end;
-    align-content: flex-end;
-    padding-right:20px; 
-    margin-left: 320px;
-}
 
-.menubar a{
+.capture{
+    margin-left: 500px;
+    margin-top: 130px;
     float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    display: block;
-    margin-right: 80px;
-    margin-left:10px;
-}
-.dropdown{
-    float: left;
-    overflow: hidden;
-}
-.menubar a:hover,.dropdown:hover, .choosepuzzel, .dropdown-content a:hover, .choosepuzzel:focus{
-    background-color: #fdb8b8;
-
-}
-.dropdown .choosepuzzel{
-
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-    color: white;
-    outline: none;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-.dropdown-content{
-
-    display: none;
-    position: absolute;
-    background-color: black;
-    min-width: 160px;
-    z-index: 1;
-}
-.dropdown-content a{
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+    margin-bottom: 20px;
+    margin-right: 2000px;
   
 }
-
-.show{
-    display: block;
-}
-.active{
-    background-color: black;
+.button{
+    background-color: #f29898;
+    border: 1px;
     color: white;
-}
-.menubar .icon{
-    display: none;
-}
-.capture{
-    margin-left: 400px;
-    float: left;
-    position: relative;
-}
-#time{
+    border-color: black;
+    border-radius: 20px;
     width: 70px;
-    height: 30px;
-    border:#fdb8b8;
-    border-style:solid; 
-    color: black;
-    position: relative;
-    float:right;
-    margin-right: 30px;
- 
-}
-.time{
-    color: #fdb8b8;
-    margin-top: 20px;
-    float: left;
-    margin-left:10px; 
-}
+    height: 40px;
+    text-align: center;
+    margin-left: 1200px;
+    margin-right: 100px;
+    padding-right: 10px;
+    margin-top: 200px;
+    font-size: 20px;
+    cursor: pointer;
+    border-style: solid;
 
-#score{
-    width: 70px;
-    height: 30px;
-    border:#fdb8b8;
-    border-style:solid; 
-    color: black;
-    position: relative;
-    float:right;
-    margin-right: 30px;
- 
-}
-.score{
-    color: #fdb8b8;
-    margin-top: 20px;
-    float: left;
-    margin-left:10px; 
-    margin-top: 19px;
 }
 
 @media screen and (max-width: 800px){
