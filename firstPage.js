@@ -103,30 +103,30 @@ function drawImageFromSrcOnCanvas(imageSrc) {
 }
 
 
-//save
-function onSaveEventHandler() {
-  let gameData = JSON.stringify(game, null, 4);
+// //save
+// function onSaveEventHandler() {
+//   let gameData = JSON.stringify(game, null, 4);
 
-  let anchor = document.createElement('a');
-  anchor.href = 'data:application/json,' + gameData;
-  anchor.style.display = 'none';
-  anchor.download = "puzzle-saved-game.json";
+//   let anchor = document.createElement('a');
+//   anchor.href = 'data:application/json,' + gameData;
+//   anchor.style.display = 'none';
+//   anchor.download = "puzzle-saved-game.json";
 
-  document.body.appendChild(anchor);
-  anchor.click(); // Force the browser to show the save file menu without making the user click.
-  document.body.removeChild(anchor);
-}
+//   document.body.appendChild(anchor);
+//   anchor.click(); // Force the browser to show the save file menu without making the user click.
+//   document.body.removeChild(anchor);
+// }
 
-//load
-// https://stackoverflow.com/questions/750032/reading-file-contents-on-the-client-side-in-javascript-in-various-browsers
-function loadSavedGameHandler(event) {
-  if (!event.target.value) {
-      iqwerty.toast.Toast('Please select one!', options);
-  } else {
-      let reader = new FileReader();
-      let file = loadSavedGame.files[0];
-      reader.readAsText(file, "UTF-8");
+// //load
+// // https://stackoverflow.com/questions/750032/reading-file-contents-on-the-client-side-in-javascript-in-various-browsers
+// function loadSavedGameHandler(event) {
+//   if (!event.target.value) {
+//       iqwerty.toast.Toast('Please select one!', options);
+//   } else {
+//       let reader = new FileReader();
+//       let file = loadSavedGame.files[0];
+//       reader.readAsText(file, "UTF-8");
 
-      reader.addEventListener("load", () => resumeFromSavedGame(reader.result));
-  }
+//       reader.addEventListener("load", () => resumeFromSavedGame(reader.result));
+//   }
 }
