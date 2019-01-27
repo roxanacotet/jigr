@@ -129,4 +129,4 @@ function drawImageFromSrcOnCanvas(imageSrc) {
 
 //       reader.addEventListener("load", () => resumeFromSavedGame(reader.result));
 //   }
-}
+// }
