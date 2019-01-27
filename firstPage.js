@@ -82,10 +82,10 @@ function drawImageFromSrcOnCanvas(imageSrc) {
   image.src = imageSrc;
 
   image.addEventListener("load", function () {
-      if (typeof game === 'undefined') {
-          let difficulty = new Difficulty(pieceNumber.value, pieceShape.value);
-          game = new Game(image, difficulty);
-      } else {
+      // if (typeof game === 'undefined') {
+      //     let difficulty = new Difficulty(pieceNumber.value, pieceShape.value);
+      //     game = new Game(image, difficulty);
+      // } else {
           game.image = image;
           game.src = image.src;
           game.pieces = [];
@@ -94,9 +94,9 @@ function drawImageFromSrcOnCanvas(imageSrc) {
           let difficulty = new Difficulty(pieceNumber.value, pieceShape.value);
           game.difficulty = difficulty.pieceNumber;
           game.canvas = new Canvas(image, difficulty.pieceShape);
-      }
+      // }
 
-      setGameProgressBar(0);
+      // setGameProgressBar(0);
 
       game.initializeGame();
   });
