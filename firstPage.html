@@ -15,10 +15,45 @@
         </div> 
             <div class="menubar" id="myMenubar">
                 <a  href="user.html">Puzzle</a>
-                <a href="">Make your own</a>
                 <a href="">Load</a>
+                <div class="dropdown">
+                    <button class="choosepuzzel" onclick="chooseFunction()">Make your own 
+                        <i class ="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="myMenu">        
+                            <div class="dropup">
+                                <button class="bottom__nav play" type="button"> Play </button>
+                                <div class="dropup__options">
+                                    <label class="description" for="load__image"><span id="chooseImageToUpload"></span></label>
+                                    <input id="load__image" class="bottom__border" type="file" accept="image/*">
+                                    <label class="description" for="load__image"><span id="enterImageUrl"></span></label>
+                                    <input id="load__url" class="bottom__border" type="url" placeholder="URL">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <!-- <div class="dropdown">
+                    <button class="choosepuzzel" onclick="chooseFunction1()">Load 
+                        <i class ="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="myMenu1"></div>
+                        <div class="dropup">
+
+                            <button class="bottom__nav load" type="button">Load</button>
+        
+                            <div class="dropup__options">
+                                <label class="description" for="load__saved__game"><span id="loadSavedGame"></span></label>
+                             <input id="load__saved__game" type="file">
+                         </div>
+                      </div>
+                    </div>  
+                </div>     -->
+
                 <a href="javascript:void(0);" class="icon" onclick="myResponsivemenu()">&#9776;
                 </a>
+                
+                
 
             </div>
 
@@ -69,6 +104,10 @@
 toggle between hiding and showing the dropdown content */
 function chooseFunction() {
     document.getElementById("myMenu").classList.toggle("show");
+}
+
+function chooseFunction1() {
+    document.getElementById("myMenu1").classList.toggle("show");
 }
 
 // Close the dropdown if the user clicks outside of it
