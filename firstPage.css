@@ -14,12 +14,12 @@
   bottom: 10px;
 }
 
-.dropup {
+.dropdown {
     position: relative;
     display: inline-block;
 }
 
-.dropup__options {
+.dropdown__options {
     display: none;
     position: absolute;
     background-color: white;
@@ -35,18 +35,18 @@
     box-sizing: border-box;
 }
 
-.dropup__options a, input, label {
+.dropdown__options a, input, label {
     display: block;
     color: #2980b9;
     text-decoration: none;
     padding: 8px 12px;
 }
 
-.dropup__options a:hover {
+.dropdown__options a:hover {
     background-color: #ebf5fb;
 }
 
-.dropup:hover .dropup__options {
+.dropdown:hover .dropdown__options {
     display: block;
 }
 
@@ -179,18 +179,18 @@ button{
     box-sizing: border-box;
 }
 
-.dropup__options a, input, label {
+.dropdown__options a, input, label {
     display: block;
     color: #2980b9;
     text-decoration: none;
     padding: 8px 12px;
 }
 
-.dropup__options a:hover {
+.dropdown__options a:hover {
     background-color: #ebf5fb;
 }
 
-.dropup:hover .dropup__options {
+.dropdown:hover .dropdown__options {
     display: block;
 }
 
