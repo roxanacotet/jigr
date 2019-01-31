@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <title>firtPage Page</title>
+    <title>First Page</title>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="firstPage.css">
     <link rel="stylesheet" type="text/css" href="home.css">
+    
 
 </head>
 <body>
@@ -31,7 +32,7 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                    </div>
 
                 <!-- <div class="dropdown">
                     <button class="choosepuzzel" onclick="chooseFunction1()">Load 
@@ -57,6 +58,18 @@
 
             </div>
 
+            <div class="container">
+
+                <main id="canvas__container" class="canvas__container">
+                    <canvas id="canvas" class="puzzle__container"></canvas>
+                </main>
+            </div>
+    
+            <div>
+                <button id="save__option" class="bottom__nav_save" type="button">Save<span id="save"></span></button>
+        </div>
+
+<!--
             <div id="carousel">
 
                 <div class="hideLeft">
@@ -97,8 +110,20 @@
             </div>
             
             <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        -->
+       
+        <script src="utile.js"></script>
+        <script src="toast.js"></script>
+        <script src="Point.js"></script>
+        <script src="ArcDirection.js"></script>
+        <script src="EdgeType.js"></script>
+        <script src="Piece.js"></script>
+        <script src="Canvas.js"></script>
+        <script src="mainGame.js"></script>
+        <script src="toast.min.js"></script>
+        <script src="firstPage.js"></script>
+       
 
-            <script src="firstPage.js"></script>  
     <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */

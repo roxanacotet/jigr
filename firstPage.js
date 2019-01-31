@@ -1,4 +1,4 @@
-function moveToSelected(element) {
+/*function moveToSelected(element) {
 
   if (element == "next") {
     var selected = $(".selected").next();
@@ -52,9 +52,13 @@ $('#prev').click(function() {
 
 $('#next').click(function() {
   moveToSelected('next');
-});
+});*/
 
 //upload or add images via URL
+
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
+
 const loadImage = document.getElementById('load__image');
 loadImage.addEventListener('input', loadImageEventHandler);
 
@@ -63,13 +67,14 @@ loadUrl.addEventListener('input', loadUrlEventHandler);
 
 function loadImageEventHandler(event) {
     if (!event.target.value) {
-        iqwerty.toast.Toast('Please select one!', options);
+      //  iqwerty.toast.Toast('Please select one!', options);
+      alert('Please select one');
     } else {
         let reader = new FileReader();
         let imagePath = loadImage.files[0];
 
         reader.readAsDataURL(imagePath);
-        reader.addEventListener("load", () => drawImageFromSrcOnCanvas(reader.result));
+        reader.addEventListener("load", () => drawImageFromSrcOnCanvas(reader.result),false);
     }
 }
 
@@ -81,12 +86,23 @@ function drawImageFromSrcOnCanvas(imageSrc) {
   let image = new Image();
   image.src = imageSrc;
 
-  image.addEventListener("load", function () {
+  image.addEventListener("load", () => drawImageOnCanvas(image));
+}
+  let pieces = [];
       // if (typeof game === 'undefined') {
-      //     let difficulty = new Difficulty(pieceNumber.value, pieceShape.value);
-      //     game = new Game(image, difficulty);
-      // } else {
-          game.image = image;
+        // let difficulty = new Difficulty(pieceNumber.value, pieceShape.value);
+         // game = new Game(image, difficulty);
+       //} else 
+        function drawImageOnCanvas(image){
+
+          clearCanvas();
+          canvas.width = 1000;
+          canvas.height = 420;
+          let imageRatio = calculateAspectRatioFit(image.width, image.height, canvas.width, canvas.height);
+          let imageOffset = calculateOffset(imageRatio.width, imageRatio.height);
+      
+          context.drawImage(image, imageOffset.x, imageOffset.y, imageRatio.width, imageRatio.height);
+        /*  game.image = image;
           game.src = image.src;
           game.pieces = [];
           game.solvedPieces = [];
@@ -94,13 +110,12 @@ function drawImageFromSrcOnCanvas(imageSrc) {
           let difficulty = new Difficulty(pieceNumber.value, pieceShape.value);
           game.difficulty = difficulty.pieceNumber;
           game.canvas = new Canvas(image, difficulty.pieceShape);
-      // }
+      // }*/
 
       // setGameProgressBar(0);
 
-      game.initializeGame();
-  });
-}
+   // game.initializeGame();
+  }
 
 
 // //save
@@ -130,3 +145,19 @@ function drawImageFromSrcOnCanvas(imageSrc) {
 //       reader.addEventListener("load", () => resumeFromSavedGame(reader.result));
 //   }
 // }
+
+function calculateAspectRatioFit(imageWidth, imageHeigth, maxWidth, maxHeight) {
+  let ratio = Math.min(maxWidth / imageWidth, maxHeight / imageHeigth);
+  return { width: imageWidth * ratio, height: imageHeigth * ratio };
+}
+
+// https://stackoverflow.com/questions/16317971/draw-images-on-in-the-middle-of-a-canvas
+function calculateOffset(imageWidth, imageHeigth) {
+  return {
+      x: canvas.width / 2 - imageWidth / 2,
+      y: canvas.height / 2 - imageHeigth / 2
+  };
+}
+function clearCanvas(){
+  context.clearRect(0,0,canvas.width, canvas.height);
+}
