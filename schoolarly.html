@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="project, infoiasi, web, social, friends, photos, videos, media" /> 
+    <title>PuzzleIT</title>
+    <link rel="stylesheet" href="scholarly.css">
+    <link rel="stylesheet" href="prism-coy.css">
+    <script src="node_modules/prismjs/prism.js" defer></script>
+  </head>
+  <body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    <header>
+      <p class="title">PuzzleIT</p>
+      <p class="subtitle">PuzzleIT</p>
+    </header>
+    <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+      <h1>PuzzleIT</h1>
+      <section>
+        <ol>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="#" typeof="schema:Person">
+              <span property="schema:givenName">Roxana Andreea</span>
+              <span property="schema:familyName">Coteț</span>
+            </a>
+          </li>
+        </ol>
+      </section>
+
+      <section typeof="sa:Abstract" id="abstract">
+        <h2>Abstract</h2>
+        <p>
+          În conținutul lucrarii se regasesc urmatoarele: Introducere, Tehnologii utilizate, Arhitectura aplicatiei, Etapele de dezvoltare, Concluzie, Bibliografie
+        </p>
+      </section>
+      <section typeof="sa:Introducere" id="intro">
+        <h2>Introducere</h2>
+        <p>
+          PuzzleIT este o aplicatie Web care permite utilizatorilor sa intre intr-un concurs de rezolvare a puzzle-urilor. 
+        </p>
+      </section>
+      <section typeof="sa:MaterialsAndMethods" id="tehnologii">
+        <h2>Tehnologii</h2>
+        <h3>HTML</h3>
+        <p>
+          HyperText Markup Language (HTML) este un limbaj de marcare utilizat pentru crearea paginilor web ce pot fi afișate într-un browser (sau navigator). Scopul HTML este mai degrabă prezentarea informațiilor – paragrafe, fonturi, tabele ș.a.m.d. – decât descrierea semanticii documentului.HTML este prescurtarea de la Hyper Text Mark-up Language si este codul care sta la baza paginilor web. Va fi folosit in cadrul scheletului principal al proiectului .
+        </p>
+        <h3>CSS</h3>
+        <p>
+          CSS (Cascading Style Sheets) este un standard pentru formatarea elementelor unui document HTML. Stilurile se pot atașa elementelor HTML prin intermediul unor fișiere externe sau în cadrul documentului. CSS se poate utiliza și pentru formatarea elementelor XHTML, XML și SVGL.
+          Intregul design al aplicatiei se va fi realizat si formatat prin intermediul CSS.
+        </p>
+        <h3>Javascript / Xmlhttprequest</h3>
+        <p>
+          JavaScript (JS) este un limbaj de programare orientat obiect bazat pe conceptul prototipurilor. Este folosit mai ales pentru introducerea unor funcționalități în paginile web, codul Javascript din aceste pagini fiind rulat de către browser.
+          Xmlhttprequest este un obiect Javascript care permite obținerea de date în format XML (dar și HTML sau text simplu) cu ajutorul unui request HTTP.
+          Acest obiect este utilizat în cadrul tehnologiilor Ajax .
+          Cele doua tehnologii vor fi folosite in cadrul aplicatiei pentru validare client-side, animatii si cereri de tip AJAX.
+        </p>
+
+        <h3>GitHub</h3>
+        <p>
+          Reprezinta un sistem de control al versiunilor codului sursa care va fi folosit pentru o mai buna administrare cat si pentru lucrul in echipa.
+        </p>
+        
+      </section>
+      <section typeof="sa:MaterialsAndMethods" id="arhitectura">
+        <h2>Arhitectura aplicatiei</h2>
+        <p>
+          Utilizand tehnologiile mentionate in sectiunea anterioara, aplicatia va fi structurata in mai multe module, dupa cum urmeaza:
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="images/home.png" alt="home">
+            <figcaption> Pagina principală </figcaption>
+        </figure>
+        <p><strong>1. Pagina de joc </strong></p>
+        <p>
+            In pagina de joc utilizatorul va putea rezolva puzzle-ul pe care si l-a ales si va putea observa scorul pe care l-a obtinut si timpul in care a rezolvat puzzle-ul. 
+        </p>
+        <figure typeof = "sa:Image">
+            <img src="images/game.png" alt="description">
+            <figcaption> Pagina de joc </figcaption>
+        </figure>
+
+      </section>
+      
+      <section typeof="sa:MaterialsAndMethods" id="utilizatori">
+        <h2> Tipuri de utilizatori </h2>
+        
+        <h3>1. Utilizator </h3>
+          <p>
+          <strong> Play </strong> Utilizatorul poate încărca local sau de la distanță via URL un puzzle pentru a îl rezolva.
+        </p>
+          <p>
+          <strong>Reset </strong> Utilizatorul poate reseta puzzle-ul.
+        </p>
+          <p>
+          <strong> Save </strong> Utilizatorul poate salava local starea curenta a unui puzzle in format JSON, ca mai apoi sa poate relua jocul.
+        </p>
+          <p>
+          <strong> Load </strong> Utilizatorul poate incarca puzzle-ul salavat local si poate continua rezolarea acestui din punctul in care s-a oprit.
+        </p>
+
+
+      </section>
+
+
+      </section>
+      <section typeof="sa:MaterialsAndMethods" id="arhitectura">
+        <h2>Scenarii de utilizare</h2>
+        <p><strong>1. Un utilizator al aplicatiei incarca o imagine local.</strong></p>
+        <p>
+          Acest scenariu de utilizare incepe cand un utilizator al aplicatiei incarca o imagine pe care o are salvata local(Play->Choose).
+          <ul>
+            <li>Aplicatia cere utilizatorului sa selecteze o imagine pe care o are salvata local.</li>
+            <li>Imaginea aleasa este apoi sectionata in piese de puzzle cu o dificultate aleasa de utilizator .</li>
+            <li>Utiizatorul poate incepe sa rezolve puzzle-ul prin operatii de drag and drop. Cand piesa se afla aproape de locul corect, se face snap.</li>
+            <li>La finalizarea puzzle-ului, utilizatorul poate alege o altă imagine pentru a incepe un joc nou sau poate parasi aplicatia.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+
+        <p><strong>2. Un utilizator al apllicatiei incarca o imagine de la distanta via un URL(Play->URL).</strong></p>
+        <p>
+          Acest scenariu porneste in momentul in care un utilizator al aplicatiei incaraca o imagine de la distanta via un URL.
+          <ul>
+            <li>Userul selecteaza URL specific imaginii pe care isi doreste sa o tranforme in puzzle.</li>
+            <li>Imaginea aleasa este apoi sectionata in piese de puzzle cu o dificultate aleasa de utilizator .</li>
+            <li>Utiizatorul poate incepe sa rezolve puzzle-ul prin operatii de drag and drop. Cand piesa se afla aproape de locul corect, se face snap.</li>
+            <li>La finalizarea puzzle-ului, utilizatorul poate alege o altă imagine pentru a incepe un joc nou sau poate parasi aplicatia.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+
+        <p><strong>3. Un utilizator salveaza starea curenta a unui puzzle pe care il rezolva in timpului unui joc.</strong></p>
+        <p>
+          Scenariul incepe cand un utilizator, in timpul jocului apasa pe bunotul 'Save'.
+          <ul>
+            <li>Aplicatia salveaza pozitiile tuturor pieselor la momentul respectiv, le pune intr-un JSON file si le descarca local.</li>
+            <li>Utilizatorul poate continua jocul sau poate incarca o alta imagine pentru a incepe un joc nou.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+        <p><strong>4.Un utilizator poate relua un joc pe are l-a slavat la un momentdat.</strong></p>
+        <p>
+          Acest scenariu incepe in momentul in care un utilizator apasa butonul 'Load'.
+          <ul>
+            <li>Aplicatia afiseaza fereastra de 'Choose file' care iti permite sa alegi din puzzle-urile salvate local, pe are iti doresti sa-l reiei.</li>
+            <li>Aplicatia aduce file-ul selectat si il transpune in puzzle-ul de dinainte de oprirea jocului.</li>
+            <li>Utilizatorul incepe rezolvarea puzzle-ului.</li>
+            <li>Scenariul ia sfarsit</li>
+          </ul>
+        </p>
+    
+
+
+      </section>
+
+      <section>
+        <section typeof="sa:MaterialsAndMethods" id="arhitectura">
+        <h2>Diagrama de clase</h2>
+        <figure typeof = "sa:Image">
+            <img src="classDiagram.png" alt="Login page">
+        </figure>
+      </section>
+      
+	  
+      <section typeof="sa:DevelopmentStages" id="stages">
+        <h2>Etape de dezvoltare</h2>
+        <p>
+          Aplicatia noastra web va fi dezvoltata in urmatoarele etape:
+        </p>
+        <ol>
+        	<li>Construirea partii de front-end, pe baza designului prezentat mai sus;</li>
+        	<li>Implementarea pe partea de server</li>
+        	<li>Testarea aplicatiei.</li>
+        </ol>
+        <p>
+        	Bineinteles ca aceste etape se pot desfasura si concomitent, nu numai secvential.
+        </p>
+        </section>
+
+        <section typeof="sa:DevelopmentStages" id="stages">
+        <h2>Tehnologii folosite</h2>
+        <p>
+          Avand in vedere expansiunea Internetului din zilele noastre, dar mai ales utilizarea pe scara larga a principalului serviciu oferit si anume HTTP, serviciu care ofera accesul la informatii prin intermediul browser-elor cunoscute, este necesar sa se poata construi un site eficient.
+        Pentru aceasta, vom folosi urmatoarele pachete si limbage de programare:
+
+        </p>
+        <ol>
+          <li>Pachetul XAMPP, care contine un server APACHE pentru gestiunea PHP si MySQL</li>
+          <li>Limbajul de descriere a datelor HTML5</li>
+          <li>Standarul pentru formatarea elementelor unui document HTML5, CSS</li>
+          <li>Limbajul de programare orientat obiect bazat pe conceptul prototipurilor JavaScript</li>
+          <li>Limbajul de programare PHP</li>
+        </ol>
+        </section>
+
+        <section typeof="sa:DevelopmentStages" id="stages">
+        <h2>Module</h2>
+        
+        <ol>
+        
+          <li>Modulul de rezolvare de puzzle-uri</li>
+          <li>Modulul de servicii web, export date</li>
+        
+        </ol>
+        </section>
+
+      </section>
+      <section typeof="sa:Conclusion" id="conclusion">
+        <h2>Concluzie</h2>
+        <p>
+          	În concluzie, aplicația este folosită pentru a ajuta utilizatorii sa isi petreaca timpul liber intr-un mod cat mai relaxant.
+        </p>
+      </section>
+      <section typeof="sa:ReferenceList" id="references">
+        <h2>Bibliografie</h2>
+        <dl>
+            <dd typeof="schema:ScholarlyArticle" resource="https://www.w3schools.com/">
+                <a href="https://www.w3schools.com/">
+                    https://www.w3schools.com/
+                </a>
+            </dd>
+            <dd typeof="schema:ScholarlyArticle" resource="https://pxhere.com/">
+                <a href="https://pxhere.com/">
+                    https://www.w3schools.com/
+                </a>
+            </dd>
+            <dd typeof="schema:ScholarlyArticle" resource="https://www.tutorialrepublic.com/">
+                <a href="https://www.tutorialrepublic.com/">
+                    https://www.tutorialrepublic.com/
+                </a>
+            </dd>
+            <dd typeof="schema:ScholarlyArticle" resource="https://stackoverflow.com/">
+                <a href="https://stackoverflow.com/">
+                    https://stackoverflow.com/
+                </a>
+            </dd>
+            <dd typeof="schema:ScholarlyArticle" resource="http://paletton.com/">
+                <a href="http://paletton.com/">
+                    http://paletton.com/
+                </a>
+            </dd>
+        </dl>
+      </section>
+    </article>
+  </body>
+</html>
